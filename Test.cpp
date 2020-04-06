@@ -83,7 +83,7 @@ TEST_CASE("relation case test") {
     T.addFather("Gila", "Moshe");
     T.addMother("Dor", "Rina");
     T.addMother("Gila", "Almagor");
-    T.addFather("Moshe", "Ham")
+    T.addFather("Moshe", "Ham");
 
             CHECK( T.relation("Rachel") == "mother");
             CHECK( T.relation("Din") == "grandfather");
