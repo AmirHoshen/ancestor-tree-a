@@ -24,7 +24,7 @@ TEST_CASE("relation case test") {
             CHECK( T.find("grandfather") == "Isaac");
             CHECK( T.find("mother") == "Rachel");
             CHECK( T.find("father") == "Yaakov");
-    CHECK_THROWS( T.find(" ") == "");
+            CHECK_THROWS( T.find(" ") == "");
 
     T.remove("Avraham");
     //Avraham and Terah should be deleted from tree
@@ -60,8 +60,8 @@ TEST_CASE("relation case test") {
             CHECK( T.find("grandmother") == "Hodaya");
             CHECK( T.relation("Mali") == "great-grandmother");
             CHECK( T.relation("Hodaya") == "grandmother");
-    CHECK_THROWS( T.addFather("Yosef", "Baroch"));//Yosef already have a father exception expected.
-    CHECK_THROWS( T.addMother("Yosef", "Kim")); //Yosef already have a mother exception expected.
+            CHECK_THROWS( T.addFather("Yosef", "Baroch"));//Yosef already have a father exception expected.
+            CHECK_THROWS( T.addMother("Yosef", "Kim")); //Yosef already have a mother exception expected.
 
     //adding tree grandparents great grandparents etc.
     T.addMother("Din", "Gila");
@@ -71,7 +71,7 @@ TEST_CASE("relation case test") {
 
             CHECK( T.find("great-grandfather") == "Dor");
             CHECK( T.find("great-grandmother") == "Gila");
-    CHECK_THROWS( T.find("great-great-grandmother"));//theres no great great grandmother in this tree.
+            CHECK_THROWS( T.find("great-great-grandmother"));//theres no great great grandmother in this tree.
 
     //removing left subtree.
     T.remove("Yaakov");//Yaakov Isaac and Gan removed from the tree.
@@ -96,7 +96,7 @@ TEST_CASE("relation case test") {
             CHECK( T.relation("Almagor") == "great-great-grandmother");
             CHECK( T.relation("Ham") == "great-great-great-grandfather");
             CHECK( T.find("great-great-great-grandfather") == "Ham");
-    CHECK_THROWS( T.find("great-great-great-grandmother") == "unrelated");
+            CHECK_THROWS( T.find("great-great-great-grandmother") == "unrelated");
 
             CHECK( T.find("mother") == "Rachel");
             CHECK( T.find("grandfather") == "Din");
@@ -108,8 +108,8 @@ TEST_CASE("relation case test") {
             CHECK( T.find("great-great-grandfather") == "Moshe");
             CHECK( T.find("great-great-grandmother") == "Almagor");
             CHECK( T.find("great-great-great-grandfather") == "Ham");
-    CHECK_THROWS( T.find("great-great-great-grandmother") == "unrelated");//should throw an exception.
-    CHECK_THROWS ( T.find("great-great-great-great-grandfather") == "unrelated");//should throw an exception.
+            CHECK_THROWS( T.find("great-great-great-grandmother") == "unrelated");//should throw an exception.
+            CHECK_THROWS ( T.find("great-great-great-great-grandfather") == "unrelated");//should throw an exception.
 
     //adding tree grandparents great grandparents etc.
     T.addFather("Rina", "Bar");
@@ -136,7 +136,7 @@ TEST_CASE("relation case test") {
             CHECK( T.relation("Kim") == "great-great-great-great-grandmother");
             CHECK( T.relation("Ben") == "great-great-great-great-great-grandfather");
             CHECK( T.find("great-great-great-great-great-grandfather") == "Ben");
-    CHECK_THROWS( T.find("great-great-great-great-great-grandmother") == "unrelated");
+            CHECK_THROWS( T.find("great-great-great-great-great-grandmother") == "unrelated");
             CHECK( T.find("great-great-great-great-grandmother") == "Kim");
             CHECK( T.find("great-great-great-grandfather") == "Bar");
             CHECK( T.find("great-great-great-grandfather") == "Ham");
@@ -157,8 +157,8 @@ TEST_CASE("relation case test") {
             CHECK( T.relation("Gan") == "unrelated");
             CHECK( T.relation("Yaakov") == "unrelated");
             CHECK( T.relation("Mali") == "unrelated");
-    CHECK_THROWS( T.find(" ") == "unrelated");//expected exception right here.
-    CHECK_THROWS( T.relation(" ") == "unrelated");//expected exception right here.
+            CHECK_THROWS( T.find(" ") == "unrelated");//expected exception right here.
+            CHECK_THROWS( T.relation(" ") == "unrelated");//expected exception right here.
 
 }
 
